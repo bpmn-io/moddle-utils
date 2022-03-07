@@ -1,0 +1,37 @@
+{
+  "name": "@bpmn-io/moddle-utils",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "all": "npm run lint && npm test",
+    "lint": "eslint .",
+    "test": "mocha test/**/*.spec.js",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bpmn-io/moddle-utils"
+  },
+  "keywords": [
+    "moddle"
+  ],
+  "author": {
+    "name": "Philipp Fromme",
+    "url": "https://github.com/philippfromme"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "bpmn-moddle": "^7.1.2",
+    "chai": "^4.3.5",
+    "eslint": "^7.32.0",
+    "eslint-plugin-bpmn-io": "^0.13.0",
+    "mocha": "^5.2.0",
+    "zeebe-bpmn-moddle": "^0.11.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "min-dash": "^3.8.1"
+  }
+}
