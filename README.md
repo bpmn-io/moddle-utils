@@ -7,7 +7,7 @@ Helpers for [moddle](https://github.com/bpmn-io/moddle).
 ## `getPath`
 
 ```javascript
-import { getPath } from 'moddle-helpers';
+import { getPath } from '@philippfromme/moddle-helpers';
 
 // global
 getPath(moddleElement); // [ 'rootElements', 0, 'flowElements', 0, 'extensionElements', 'values', 0 ]
@@ -19,7 +19,7 @@ getPath(moddleElement, parentModdleElement); // [ 'extensionElements', 'values',
 ## `parsePath`
 
 ```javascript
-import { parsePath } from 'moddle-helpers';
+import { parsePath } from '@philippfromme/moddle-helpers';
 
 // default separator
 parsePath('rootElements.0.flowElements.0.extensionElements.values.0.type'); // [ 'rootElements', 0, 'flowElements', 0, 'extensionElements', 'values', 0 ]
@@ -31,7 +31,7 @@ parsePath('rootElements-0-flowElements-0-extensionElements-values-0-type', '-');
 ## `stringifyPath`
 
 ```javascript
-import { stringifyPath } from 'moddle-helpers';
+import { stringifyPath } from '@philippfromme/moddle-helpers';
 
 // default separator
 stringifyPath([ 'rootElements', 0, 'flowElements', 0, 'extensionElements', 'values', 0 ]); // 'rootElements.0.flowElements.0.extensionElements.values.0.type'
