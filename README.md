@@ -14,6 +14,11 @@ getPath(moddleElement); // [ 'rootElements', 0, 'flowElements', 0, 'extensionEle
 
 // local
 getPath(moddleElement, parentModdleElement); // [ 'extensionElements', 'values', 0 ]
+
+// null
+const task = moddle.create('bpmn:Task'); // task.$parent === undefined
+
+getPath(task); // null
 ```
 
 ## `parsePath`
