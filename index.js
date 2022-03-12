@@ -1,3 +1,5 @@
+const { isString } = require('min-dash');
+
 /**
  * Get path from model element and optional parent model element. Falls back to
  * returning null.
@@ -66,6 +68,25 @@ function getPropertyName(moddleElement, parentModdleElement) {
 }
 
 /**
+ * @param {string|(number|string)[]} a
+ * @param {string|(number|string)[]} b
+ * @param {string} [separator]
+ *
+ * @returns {boolean}
+ */
+module.exports.pathEquals = function(a, b, separator = '.') {
+  if (!isString(a)) {
+    a = pathStringify(a, separator);
+  }
+
+  if (!isString(b)) {
+    b = pathStringify(b, separator);
+  }
+
+  return a === b;
+};
+
+/**
  * @param {string} path
  * @param {string} [separator]
  *
@@ -83,6 +104,8 @@ module.exports.pathParse = function(path, separator = '.') {
  *
  * @returns {string}
  */
-module.exports.pathStringify = function(path, separator = '.') {
+function pathStringify(path, separator = '.') {
   return path.join(separator);
-};
+}
+
+module.exports.pathStringify = pathStringify;

@@ -2,7 +2,12 @@ const path = require('path');
 
 const { expect } = require('chai');
 
-const { getPath, pathParse, pathStringify } = require('../index');
+const {
+  getPath,
+  pathEquals,
+  pathParse,
+  pathStringify
+} = require('../index');
 
 const { readModdle } = require('./helper');
 
@@ -139,6 +144,107 @@ describe('index', function() {
 
   });
 
+
+  describe('#pathEquals', function() {
+
+    it('should be equal (string, string)', function() {
+
+      // given
+      const a = 'foo.bar.0.baz',
+            b = 'foo.bar.0.baz';
+
+      // when
+      const equal = pathEquals(a, b);
+
+      // then
+      expect(equal).to.be.true;
+    });
+
+
+    it('should not be equal (string, string)', function() {
+
+      // given
+      const a = 'foo.bar.0.baz',
+            b = 'foo.bar.baz';
+
+      // when
+      const equal = pathEquals(a, b);
+
+      // then
+      expect(equal).to.be.false;
+    });
+
+
+    it('should be equal (string, string[])', function() {
+
+      // given
+      const a = 'foo.bar.0.baz',
+            b = [ 'foo', 'bar', 0, 'baz' ];
+
+      // when
+      const equal = pathEquals(a, b);
+
+      // then
+      expect(equal).to.be.true;
+    });
+
+
+    it('should not be equal (string, string[])', function() {
+
+      // given
+      const a = 'foo.bar.0.baz',
+            b = [ 'foo', 'bar', 'baz' ];
+
+      // when
+      const equal = pathEquals(a, b);
+
+      // then
+      expect(equal).to.be.false;
+    });
+
+
+    it('should be equal (string[], string[])', function() {
+
+      // given
+      const a = [ 'foo', 'bar', 0, 'baz' ],
+            b = [ 'foo', 'bar', 0, 'baz' ];
+
+      // when
+      const equal = pathEquals(a, b);
+
+      // then
+      expect(equal).to.be.true;
+    });
+
+
+    it('should not be equal (string[], string[])', function() {
+
+      // given
+      const a = [ 'foo', 'bar', 0, 'baz' ],
+            b = [ 'foo', 'bar', 'baz' ];
+
+      // when
+      const equal = pathEquals(a, b);
+
+      // then
+      expect(equal).to.be.false;
+    });
+
+
+    it('should be equal (custom separator)', function() {
+
+      // given
+      const a = 'foo-bar-0-baz',
+            b = 'foo-bar-0-baz';
+
+      // when
+      const equal = pathEquals(a, b, '-');
+
+      // then
+      expect(equal).to.be.true;
+    });
+
+  });
 
   describe('#pathParse', function() {
 

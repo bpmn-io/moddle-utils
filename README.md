@@ -21,6 +21,20 @@ const task = moddle.create('bpmn:Task'); // task.$parent === undefined
 getPath(task); // null
 ```
 
+## `pathEquals`
+
+```javascript
+import { pathEquals } from '@philippfromme/moddle-helpers';
+
+// default separator
+pathEquals('extensionElements.values.0.type', 'extensionElements.values.0.type'); // true
+
+pathEquals([ 'extensionElements', 'values', 0 ], [ 'extensionElements', 'values', 0 ]); // true
+
+// custom separator
+parsePath('extensionElements-values-0-type', 'extensionElements-values-0-type', '-'); // true
+```
+
 ## `parsePath`
 
 ```javascript
