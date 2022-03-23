@@ -23,6 +23,16 @@ getPath(task); // null
 getPath(undefined); // null
 ```
 
+## `pathConcat`
+
+```javascript
+import { pathConcat } from '@philippfromme/moddle-helpers';
+
+pathConcat([ 'foo', 'bar' ], 'baz'); // [ 'foo', 'bar', 'baz' ]
+
+pathConcat([ 'foo', 'bar' ], null); // null
+```
+
 ## `pathEquals`
 
 ```javascript

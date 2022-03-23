@@ -1,4 +1,7 @@
-const { isString } = require('min-dash');
+const {
+  isNil,
+  isString
+} = require('min-dash');
 
 /**
  * Get path from model element and optional parent model element. Falls back to
@@ -66,6 +69,29 @@ function getPropertyName(moddleElement, parentModdleElement) {
 
   return [];
 }
+
+/**
+ * @param {(string|(number|string)[])[]} paths
+ *
+ * @returns {(number|string)[]}
+ */
+module.exports.pathConcat = function(...paths) {
+  let concatenatedPaths = [];
+
+  for (let path of paths) {
+    if (isNil(path)) {
+      return null;
+    }
+
+    if (isString(path)) {
+      path = [ path ];
+    }
+
+    concatenatedPaths = concatenatedPaths.concat(path);
+  }
+
+  return concatenatedPaths;
+};
 
 /**
  * @param {string|(number|string)[]} a

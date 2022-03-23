@@ -4,6 +4,7 @@ const { expect } = require('chai');
 
 const {
   getPath,
+  pathConcat,
   pathEquals,
   pathParse,
   pathStringify
@@ -154,6 +155,68 @@ describe('index', function() {
   });
 
 
+  describe('#pathConcat', function() {
+
+    it('should concat (string[], string[])', function() {
+
+      // given
+      const a = [ 'foo' ],
+            b = [ 'bar', 'baz' ];
+
+      // when
+      const concatenated = pathConcat(a, b);
+
+      // then
+      expect(concatenated).to.eql([ 'foo', 'bar', 'baz' ]);
+    });
+
+
+    it('should concat (string[], (number|string)[], (number|string)[])', function() {
+
+      // given
+      const a = [ 'foo' ],
+            b = [ 0, 'bar' ],
+            c = [ 1, 'baz' ];
+
+      // when
+      const concatenated = pathConcat(a, b, c);
+
+      // then
+      expect(concatenated).to.eql([ 'foo', 0, 'bar', 1, 'baz' ]);
+    });
+
+
+    it('should concat (string[], number, string)', function() {
+
+      // given
+      const a = [ 'foo' ],
+            b = 0,
+            c = 'bar';
+
+      // when
+      const concatenated = pathConcat(a, b, c);
+
+      // then
+      expect(concatenated).to.eql([ 'foo', 0, 'bar' ]);
+    });
+
+
+    it('should return null', function() {
+
+      // given
+      const a = null,
+            b = [ 'bar', 'baz' ];
+
+      // when
+      const concatenated = pathConcat(a, b);
+
+      // then
+      expect(concatenated).to.be.null;
+    });
+
+  });
+
+
   describe('#pathEquals', function() {
 
     it('should be equal (string, string)', function() {
@@ -254,6 +317,7 @@ describe('index', function() {
     });
 
   });
+
 
   describe('#pathParse', function() {
 
