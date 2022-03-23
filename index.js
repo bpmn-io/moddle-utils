@@ -10,7 +10,7 @@ const { isString } = require('min-dash');
  * @returns {string[]|null}
  */
 module.exports.getPath = function(moddleElement, parentModdleElement) {
-  if (moddleElement === parentModdleElement) {
+  if (!moddleElement || moddleElement === parentModdleElement) {
     return null;
   }
 

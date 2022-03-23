@@ -126,6 +126,15 @@ describe('index', function() {
     });
 
 
+    it('should return null (moddleElement=undefined)', function() {
+
+      // given
+      // when
+      // then
+      expect(getPath()).to.be.null;
+    });
+
+
     it('should return null (moddleElement=parentModdleElement)', function() {
 
       // given

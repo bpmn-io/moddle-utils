@@ -19,6 +19,8 @@ getPath(moddleElement, parentModdleElement); // [ 'extensionElements', 'values',
 const task = moddle.create('bpmn:Task'); // task.$parent === undefined
 
 getPath(task); // null
+
+getPath(undefined); // null
 ```
 
 ## `pathEquals`
