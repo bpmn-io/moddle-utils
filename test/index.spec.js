@@ -201,10 +201,24 @@ describe('index', function() {
     });
 
 
-    it('should return null', function() {
+    it('should return null (null)', function() {
 
       // given
       const a = null,
+            b = [ 'bar', 'baz' ];
+
+      // when
+      const concatenated = pathConcat(a, b);
+
+      // then
+      expect(concatenated).to.be.null;
+    });
+
+
+    it('should return null (undefined)', function() {
+
+      // given
+      const a = undefined,
             b = [ 'bar', 'baz' ];
 
       // when
@@ -316,6 +330,34 @@ describe('index', function() {
       expect(equal).to.be.true;
     });
 
+
+    it('should not be equal (null)', function() {
+
+      // given
+      const a = null,
+            b = [ 'foo' ];
+
+      // when
+      const equal = pathEquals(a, b);
+
+      // then
+      expect(equal).to.be.false;
+    });
+
+
+    it('should not be equal (undefined)', function() {
+
+      // given
+      const a = undefined,
+            b = [ 'foo' ];
+
+      // when
+      const equal = pathEquals(a, b);
+
+      // then
+      expect(equal).to.be.false;
+    });
+
   });
 
 
@@ -364,6 +406,19 @@ describe('index', function() {
       ]);
     });
 
+
+    it('should not parse path (null)', function() {
+
+      // given
+      const pathStringified = null;
+
+      // when
+      const pathParsed = pathParse(pathStringified);
+
+      // then
+      expect(pathParsed).to.be.null;
+    });
+
   });
 
 
@@ -410,6 +465,19 @@ describe('index', function() {
 
       // then
       expect(pathStringified).to.equal('rootElements-0-flowElements-0-extensionElements-values-0-type');
+    });
+
+
+    it('should not stringify path (null)', function() {
+
+      // given
+      const pathParsed = null;
+
+      // when
+      const pathStringified = pathStringify(pathParsed);
+
+      // then
+      expect(pathStringified).to.be.null;
     });
 
   });

@@ -15,12 +15,13 @@ getPath(moddleElement); // [ 'rootElements', 0, 'flowElements', 0, 'extensionEle
 // local
 getPath(moddleElement, parentModdleElement); // [ 'extensionElements', 'values', 0 ]
 
-// null
-const task = moddle.create('bpmn:Task'); // task.$parent === undefined
+// $parent === undefined
+const task = moddle.create('bpmn:Task');
 
 getPath(task); // null
 
-getPath(undefined); // null
+// null
+getPath(null); // null
 ```
 
 ## `pathConcat`
@@ -30,6 +31,7 @@ import { pathConcat } from '@philippfromme/moddle-helpers';
 
 pathConcat([ 'foo', 'bar' ], 'baz'); // [ 'foo', 'bar', 'baz' ]
 
+// null
 pathConcat([ 'foo', 'bar' ], null); // null
 ```
 
@@ -44,7 +46,10 @@ pathEquals('extensionElements.values.0.type', 'extensionElements.values.0.type')
 pathEquals([ 'extensionElements', 'values', 0 ], [ 'extensionElements', 'values', 0 ]); // true
 
 // custom separator
-parsePath('extensionElements-values-0-type', 'extensionElements-values-0-type', '-'); // true
+pathEquals('extensionElements-values-0-type', 'extensionElements-values-0-type', '-'); // true
+
+// null
+pathEquals(null, [ 'foo' ]); // false
 ```
 
 ## `parsePath`
@@ -57,6 +62,9 @@ parsePath('rootElements.0.flowElements.0.extensionElements.values.0.type'); // [
 
 // custom separator
 parsePath('rootElements-0-flowElements-0-extensionElements-values-0-type', '-'); // [ 'rootElements', 0, 'flowElements', 0, 'extensionElements', 'values', 0 ]
+
+// null
+parsePath(null); // null
 ```
 
 ## `stringifyPath`
@@ -69,6 +77,9 @@ stringifyPath([ 'rootElements', 0, 'flowElements', 0, 'extensionElements', 'valu
 
 // custom separator
 stringifyPath([ 'rootElements', 0, 'flowElements', 0, 'extensionElements', 'values', 0 ], '-'); // 'rootElements-0-flowElements-0-extensionElements-values-0-type'
+
+// null
+stringifyPath(null); // null
 ```
 
 # Licence

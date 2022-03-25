@@ -1,6 +1,7 @@
 const {
   isNil,
-  isString
+  isString,
+  isUndefined
 } = require('min-dash');
 
 /**
@@ -79,7 +80,7 @@ module.exports.pathConcat = function(...paths) {
   let concatenatedPaths = [];
 
   for (let path of paths) {
-    if (isNil(path)) {
+    if (isNil(path) || isUndefined(path)) {
       return null;
     }
 
@@ -101,6 +102,10 @@ module.exports.pathConcat = function(...paths) {
  * @returns {boolean}
  */
 module.exports.pathEquals = function(a, b, separator = '.') {
+  if (isNil(a) || isUndefined(a) || isNil(b) || isUndefined(b)) {
+    return false;
+  }
+
   if (!isString(a)) {
     a = pathStringify(a, separator);
   }
@@ -119,6 +124,10 @@ module.exports.pathEquals = function(a, b, separator = '.') {
  * @returns {(number|string)[]}
  */
 module.exports.pathParse = function(path, separator = '.') {
+  if (isNil(path) || isUndefined(path)) {
+    return null;
+  }
+
   return path
     .split(separator)
     .map(string => isNaN(string) ? string : parseInt(string));
@@ -131,6 +140,10 @@ module.exports.pathParse = function(path, separator = '.') {
  * @returns {string}
  */
 function pathStringify(path, separator = '.') {
+  if (isNil(path) || isUndefined(path)) {
+    return null;
+  }
+
   return path.join(separator);
 }
 
