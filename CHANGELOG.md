@@ -6,6 +6,10 @@ All notable changes to [`@philippfromme/moddle-helpers`](https://github.com/phil
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.4.0
+
+* `FEAT`: handle `null` and `undefined` paths ([`49651c`](https://github.com/philippfromme/moddle-helpers/commit/49651c16b359829e3639f10da683dc665e11f886))
+
 ## 0.3.0
 
 * `FEAT`: add `#pathConcat` ([`70be81`](https://github.com/philippfromme/moddle-helpers/commit/70be81f74209c6e0d47f7e36a4f1a196530e308c))
