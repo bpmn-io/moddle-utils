@@ -6,6 +6,10 @@ All notable changes to [`@philippfromme/moddle-helpers`](https://github.com/phil
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.4.1
+
+* `FIX`: return empty path if parent element is element ([`b418e1`](https://github.com/philippfromme/moddle-helpers/commit/b418e13f969ff4148bbf0fd3f6cc1cd680aeb6ee))
+
 ## 0.4.0
 
 * `FEAT`: handle `null` and `undefined` paths ([`49651c`](https://github.com/philippfromme/moddle-helpers/commit/49651c16b359829e3639f10da683dc665e11f886))
