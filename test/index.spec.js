@@ -136,7 +136,7 @@ describe('index', function() {
     });
 
 
-    it('should return null (moddleElement=parentModdleElement)', function() {
+    it('should return [] (moddleElement=parentModdleElement)', function() {
 
       // given
       const moddleElement = definitions
@@ -149,7 +149,7 @@ describe('index', function() {
 
       // when
       // then
-      expect(getPath(moddleElement, moddleElement)).to.be.null;
+      expect(getPath(moddleElement, moddleElement)).to.be.empty;
     });
 
   });

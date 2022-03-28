@@ -14,8 +14,12 @@ const {
  * @returns {string[]|null}
  */
 module.exports.getPath = function(moddleElement, parentModdleElement) {
-  if (!moddleElement || moddleElement === parentModdleElement) {
+  if (!moddleElement) {
     return null;
+  }
+
+  if (moddleElement === parentModdleElement) {
+    return [];
   }
 
   let path = [],
