@@ -1,5 +1,5 @@
 {
-  "name": "@philippfromme/moddle-helpers",
+  "name": "@bpmn-io/moddle-helpers",
   "version": "0.4.1",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/philippfromme/moddle-helpers"
+    "url": "https://github.com/bpmn-io/moddle-helpers"
   },
   "keywords": [
     "moddle"

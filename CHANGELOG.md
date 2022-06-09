@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to [`@philippfromme/moddle-helpers`](https://github.com/philippfromme/moddle-helpers) are documented here. We use [semantic versioning](http://semver.org/) for releases.
+All notable changes to [`@bpmn-io/moddle-helpers`](https://github.com/bpmn-io/moddle-helpers) are documented here. We use [semantic versioning](http://semver.org/) for releases.
 
 ## Unreleased
 

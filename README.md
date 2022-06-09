@@ -7,7 +7,7 @@ Helpers for [moddle](https://github.com/bpmn-io/moddle).
 ## `getPath`
 
 ```javascript
-import { getPath } from '@philippfromme/moddle-helpers';
+import { getPath } from '@bpmn-io/moddle-helpers';
 
 // global
 getPath(moddleElement); // [ 'rootElements', 0, 'flowElements', 0, 'extensionElements', 'values', 0 ]
@@ -27,7 +27,7 @@ getPath(null); // null
 ## `pathConcat`
 
 ```javascript
-import { pathConcat } from '@philippfromme/moddle-helpers';
+import { pathConcat } from '@bpmn-io/moddle-helpers';
 
 pathConcat([ 'foo', 'bar' ], 'baz'); // [ 'foo', 'bar', 'baz' ]
 
@@ -38,7 +38,7 @@ pathConcat([ 'foo', 'bar' ], null); // null
 ## `pathEquals`
 
 ```javascript
-import { pathEquals } from '@philippfromme/moddle-helpers';
+import { pathEquals } from '@bpmn-io/moddle-helpers';
 
 // default separator
 pathEquals('extensionElements.values.0.type', 'extensionElements.values.0.type'); // true
@@ -55,7 +55,7 @@ pathEquals(null, [ 'foo' ]); // false
 ## `parsePath`
 
 ```javascript
-import { parsePath } from '@philippfromme/moddle-helpers';
+import { parsePath } from '@bpmn-io/moddle-helpers';
 
 // default separator
 parsePath('rootElements.0.flowElements.0.extensionElements.values.0.type'); // [ 'rootElements', 0, 'flowElements', 0, 'extensionElements', 'values', 0 ]
@@ -70,7 +70,7 @@ parsePath(null); // null
 ## `stringifyPath`
 
 ```javascript
-import { stringifyPath } from '@philippfromme/moddle-helpers';
+import { stringifyPath } from '@bpmn-io/moddle-helpers';
 
 // default separator
 stringifyPath([ 'rootElements', 0, 'flowElements', 0, 'extensionElements', 'values', 0 ]); // 'rootElements.0.flowElements.0.extensionElements.values.0.type'
