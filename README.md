@@ -1,8 +1,8 @@
-# moddle-utils
+# @bpmn-io/moddle-utils
 
 [![CI](https://github.com/bpmn-io/moddle-utils/workflows/CI/badge.svg)](https://github.com/bpmn-io/moddle-utils/actions?query=workflow%3ACI)
 
-Utils for [moddle](https://github.com/bpmn-io/moddle).
+Utils for [moddle](https://github.com/bpmn-io/moddle). 🛠️
 
 # API
 
