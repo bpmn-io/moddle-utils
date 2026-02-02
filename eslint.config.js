@@ -5,7 +5,8 @@ const files = {
     'eslint.config.js'
   ],
   test: [
-    'test/**/*.js'
+    'test/**/*.js',
+    'test/**/*.cjs'
   ],
   ignored: []
 };

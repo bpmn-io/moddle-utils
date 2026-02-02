@@ -6,7 +6,12 @@ All notable changes to [`@bpmn-io/moddle-utils`](https://github.com/bpmn-io/modd
 
 ___Note:__ Yet to be released changes appear here._
 
+* `CHORE`: turn into ESM only module
 * `DEPS`: update to `min-dash@5.0.0`
+
+### Breaking Changes
+
+* Consume from CommonJS in `Node >= 20.12`
 
 ## 0.2.1
 
