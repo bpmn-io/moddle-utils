@@ -1,6 +1,6 @@
 const { readFileSync } = require('fs');
 
-const BpmnModdle = require('bpmn-moddle');
+const { BpmnModdle } = require('bpmn-moddle');
 
 const zeebeModdleSchema = require('zeebe-bpmn-moddle/resources/zeebe.json');
 
