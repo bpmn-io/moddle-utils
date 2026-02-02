@@ -6,6 +6,8 @@ All notable changes to [`@bpmn-io/moddle-utils`](https://github.com/bpmn-io/modd
 
 ___Note:__ Yet to be released changes appear here._
 
+* `DEPS`: update to `min-dash@5.0.0`
+
 ## 0.2.1
 
 * `CHORE`: add LICENSE
