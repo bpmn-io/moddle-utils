@@ -23,8 +23,8 @@
   "devDependencies": {
     "bpmn-moddle": "^10.0.0",
     "chai": "^6.2.2",
-    "eslint": "^7.32.0",
-    "eslint-plugin-bpmn-io": "^0.13.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-bpmn-io": "^2.2.0",
     "mocha": "^11.7.5",
     "zeebe-bpmn-moddle": "^1.12.0"
   },
