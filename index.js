@@ -1,8 +1,8 @@
-const {
+import {
   isNil,
   isString,
   isUndefined
-} = require('min-dash');
+} from 'min-dash';
 
 /**
  * Get path from model element and optional parent model element. Fall back to
@@ -13,7 +13,7 @@ const {
  *
  * @returns {string[]|null}
  */
-module.exports.getPath = function(moddleElement, parentModdleElement) {
+export function getPath(moddleElement, parentModdleElement) {
   if (!moddleElement) {
     return null;
   }
@@ -46,7 +46,7 @@ module.exports.getPath = function(moddleElement, parentModdleElement) {
   } while (parent);
 
   return path;
-};
+}
 
 /**
  * Get property name from model element and parent model element.
@@ -80,7 +80,7 @@ function getPropertyName(moddleElement, parentModdleElement) {
  *
  * @returns {(number|string)[]}
  */
-module.exports.pathConcat = function(...paths) {
+export function pathConcat(...paths) {
   let concatenatedPaths = [];
 
   for (let path of paths) {
@@ -96,7 +96,7 @@ module.exports.pathConcat = function(...paths) {
   }
 
   return concatenatedPaths;
-};
+}
 
 /**
  * @param {string|(number|string)[]} a
@@ -105,7 +105,7 @@ module.exports.pathConcat = function(...paths) {
  *
  * @returns {boolean}
  */
-module.exports.pathEquals = function(a, b, separator = '.') {
+export function pathEquals(a, b, separator = '.') {
   if (isNil(a) || isUndefined(a) || isNil(b) || isUndefined(b)) {
     return false;
   }
@@ -119,7 +119,7 @@ module.exports.pathEquals = function(a, b, separator = '.') {
   }
 
   return a === b;
-};
+}
 
 /**
  * @param {string} path
@@ -127,7 +127,7 @@ module.exports.pathEquals = function(a, b, separator = '.') {
  *
  * @returns {(number|string)[]}
  */
-module.exports.pathParse = function(path, separator = '.') {
+export function pathParse(path, separator = '.') {
   if (isNil(path) || isUndefined(path)) {
     return null;
   }
@@ -135,7 +135,7 @@ module.exports.pathParse = function(path, separator = '.') {
   return path
     .split(separator)
     .map(string => isNaN(string) ? string : parseInt(string));
-};
+}
 
 /**
  * @param {(number|string)[]} path
@@ -143,12 +143,10 @@ module.exports.pathParse = function(path, separator = '.') {
  *
  * @returns {string}
  */
-function pathStringify(path, separator = '.') {
+export function pathStringify(path, separator = '.') {
   if (isNil(path) || isUndefined(path)) {
     return null;
   }
 
   return path.join(separator);
 }
-
-module.exports.pathStringify = pathStringify;

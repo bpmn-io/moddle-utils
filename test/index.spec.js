@@ -1,23 +1,22 @@
-const path = require('path');
+import { expect } from 'chai';
 
-const { expect } = require('chai');
-
-const {
+import {
   getPath,
   pathConcat,
   pathEquals,
   pathParse,
   pathStringify
-} = require('../index');
+} from '@bpmn-io/moddle-utils';
 
-const { readModdle } = require('./helper');
+import { readModdle } from './helper.js';
+
 
 describe('index', function() {
 
   let definitions;
 
   beforeEach(async function() {
-    ({ rootElement: definitions } = await readModdle(path.join(__dirname, 'diagram.bpmn')));
+    ({ rootElement: definitions } = await readModdle(new URL('./diagram.bpmn', import.meta.url)));
   });
 
 

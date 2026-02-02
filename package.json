@@ -1,16 +1,21 @@
 {
   "name": "@bpmn-io/moddle-utils",
   "version": "0.2.1",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "all": "npm run lint && npm test",
     "lint": "eslint .",
-    "test": "mocha test/**/*.spec.js",
+    "test": "mocha test",
     "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/bpmn-io/moddle-utils"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
   },
   "keywords": [
     "moddle"

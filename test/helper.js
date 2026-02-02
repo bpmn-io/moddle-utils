@@ -1,8 +1,9 @@
-const { readFileSync } = require('fs');
+import { readFileSync } from 'node:fs';
 
-const { BpmnModdle } = require('bpmn-moddle');
+import { BpmnModdle } from 'bpmn-moddle';
 
-const zeebeModdleSchema = require('zeebe-bpmn-moddle/resources/zeebe.json');
+import zeebeModdleSchema from 'zeebe-bpmn-moddle/resources/zeebe.json' with { type: 'json' };
+
 
 async function createModdle(xml) {
   const moddle = new BpmnModdle({
@@ -30,8 +31,8 @@ async function createModdle(xml) {
   };
 }
 
-module.exports.readModdle = (filePath) => {
+export function readModdle(filePath) {
   const contents = readFileSync(filePath, 'utf8');
 
   return createModdle(contents);
-};
+}
